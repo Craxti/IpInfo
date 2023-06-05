@@ -1,0 +1,20 @@
+<html>
+<body>
+    <h1>Status</h1>
+    {% if not config['file'] %}
+    <p>Not configured. Click <a href="/force-db">here</a> to initialize the database.</p>
+    {% else %}
+    <p>Ready to rock.</p>
+    <p>IP Enrichment: <a href="/lookup?ip=8.8.8.8">/lookup?ip=8.8.8.8</a></p>
+    <p>Network Addresses: <a href="/network-addresses?cidr=8.8.8.0/24">/network-addresses?cidr=8.8.8.0/24</a></p>
+    <p>ASN Prefixes: <a href="/prefixes?asn=15169">/prefixes?asn=15169</a></p>
+    <p>ASN Name: <a href="/as-name?asn=15169">/as-name?asn=15169</a></p>
+    <p>Geolocation: <a href="/geolocation?ip=8.8.8.8">/geolocation?ip=8.8.8.8</a></p>
+    {% endif %}
+
+    <h1>Configuration</h1>
+    <p>ASN Last Updated: {{config['asn']['last_update']}}</p>
+    <p>ASN Last File: {{config['asn']['last_rib_file']}}</p>
+    <p>GEOIP Last Updated: {{config['geoip']['last_update']}}</p>
+</body>
+</html>
