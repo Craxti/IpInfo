@@ -20,3 +20,4 @@ if __name__ == '__main__':
         if not file.name.endswith('.mmdb'):
             continue
         shutil.move('/tmp/%s' % file.name, '/tmp/GeoLite2-City.mmdb')
+        
